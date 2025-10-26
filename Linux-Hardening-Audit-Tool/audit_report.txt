@@ -1,0 +1,20 @@
+
+Linux Hardening Audit Summary
+==================================
+- Firewall configuration: 10/20 (50%) [FAIL]
+- Enabled services: 20/20 (100%) [PASS]
+- SSH configuration: 4/25 (16%) [FAIL]
+- Key file permissions: 16/20 (80%) [PASS]
+- Rootkit indicators: 0/15 (0%) [FAIL]
+----------------------------------
+Overall: 50/100 (50.0%) [FAIL]
+
+Recommendations:
+========================================
+[Firewall Configuration] (High) -> Set default inbound policy to deny (e.g., 'sudo ufw default deny incoming').
+[SSH Configuration] (High) -> Set 'PermitRootLogin no' and reload SSH ('sudo systemctl reload sshd').
+[SSH Configuration] (High) -> Disable password auth: set 'PasswordAuthentication no' and use SSH keys.
+[SSH Configuration] (Medium) -> Reduce 'MaxAuthTries' to 4 or fewer and reload SSH.
+[SSH Configuration] (Low) -> Set 'ClientAliveInterval' to 600s or less (e.g., 300) and reload SSH.
+[Key File Permissions] (Medium) -> Remove or secure backup files in /etc (e.g., *.bak, *.old).
+[Rootkit Indicators] (Medium) -> Install a scanner (e.g., rkhunter) and run regular checks.
