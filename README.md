@@ -1,4 +1,4 @@
-# Elevate-Labs-Project Repository
+# Project Repository
 
 This repository contains two main projects developed for educational and practical purposes:
 
